@@ -3,11 +3,11 @@
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-function area(l1, l2) {
-  const aRettangolo = 3 * 5;
-  return aRettangolo;
-}
-console.log(area());
+const area = function (l1, l2) {
+  return l1 * l2;
+};
+const areaResult = area(5, 3);
+console.log(areaResult);
 
 /* ESERCIZIO 2
  Scrivi una funzione di nome "crazySum", che riceve due numeri interi come parametri.
@@ -16,13 +16,14 @@ console.log(area());
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-function crazySum(num1, num2) {
-  const number = 4 + 4;
-  return number;
-}
-console.log(crazySum());
-const summed = crazySum() * 3;
-console.log(summed);
+const crazySum = function (num1, num2) {
+  if (num1 === num2) {
+    return (num1 + num2) * 3;
+  } else {
+    return num1 + num2;
+  }
+};
+console.log(crazySum(5, 5));
 
 /* ESERCIZIO 3
  Scrivi una funzione di nome "crazyDiff" che calcola la differenza assoluta tra un numero fornito come parametro e 19.
@@ -30,6 +31,14 @@ console.log(summed);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const crazyDiff = function (n) {
+  if (n !== 19 && n > 19) {
+    return n * 3;
+  } else {
+    return false;
+  }
+};
+console.log(crazyDiff(22));
 
 /* ESERCIZIO 4
  Scrivi una funzione di nome "boundary" che accetta un numero intero n come parametro, e ritorna true se n è compreso tra 20 e 100 (incluso) oppure
@@ -37,12 +46,14 @@ console.log(summed);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-function boundary(n) {
-  if ((20 >= 20 && 20 <= 100) || 20 === 400) {
+const boundary = function (n) {
+  if ((n > 20 && n <= 100) || n === 400) {
     return true;
+  } else {
+    return false;
   }
-}
-console.log(boundary());
+};
+console.log(boundary(30));
 
 /* ESERCIZIO 5
  Scrivi una funzione di nome "epify" che accetta una stringa come parametro.
@@ -58,7 +69,14 @@ console.log(boundary());
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+const check3and7 = function (n) {
+  if (n >= 0 && (n % 3 === 0 || n % 7 === 0)) {
+    return true;
+  } else {
+    return false;
+  }
+};
+console.log(check3and7(10));
 /* ESERCIZIO 7
  Scrivi una funzione di nome "reverseString", il cui scopo è invertire una stringa fornita come parametro (es. "EPICODE" --> "EDOCIPE")
 */
@@ -71,10 +89,6 @@ console.log(boundary());
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-const upperFirst = "Ciao a tutti come state";
-const maiuscolo = upperFirst.toUpperCase();
-
-console.log(maiuscolo);
 
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
