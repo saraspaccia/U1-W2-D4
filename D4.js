@@ -62,6 +62,14 @@ console.log(boundary(30));
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const epify = function (str) {
+  if (str.startsWith("EPICODE")) {
+    return str;
+  } else {
+    return "EPICODE" + str;
+  }
+};
+console.log(epify("ciao"));
 
 /* ESERCIZIO 6
  Scrivi una funzione di nome "check3and7" che accetta un numero positivo come parametro. La funzione deve controllare che il parametro sia un multiplo
@@ -82,13 +90,47 @@ console.log(check3and7(10));
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const reverseString = function (str) {
+  let newString = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    // console.log(str[i]);
 
+    newString = newString.concat(str[i]);
+  }
+  return newString;
+  // console.log(newString);
+  // for (let i = 0; i < str.length; i++) {
+  //   console.log(str[i].toLowerCase());
+  // }
+  // return str[str.length - 1];
+};
+console.log(reverseString("EPICODE"));
+
+const reverseString2 = function (str) {
+  return str.split("").reverse().join("");
+};
+console.log(reverseString2("epicode"));
 /* ESERCIZIO 8
  Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
  La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const upperFirst = function (str) {
+  let words = str.split(" ");
+  let newPhrase = "";
+  for (let i = 0; i < words.length; i++) {
+    let word = words[i];
+    // console.log(word[0].toUpperCase());
+    let firstLetter = word[0].toUpperCase();
+    let remainingLetters = word.slice(1);
+    let newWord = firstLetter + remainingLetters;
+    newPhrase += newWord + " ";
+  }
+  return newPhrase;
+  // return str.split(" ");
+};
+console.log(upperFirst("ciao buongiorno a tutti i nostri amici"));
 
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
